@@ -1,0 +1,94 @@
+let campoIdade;
+2
+let campoFantasia;
+3
+let campoAventura;
+4
+​
+5
+function setup() {
+6
+  createCanvas(800, 400);
+7
+  createElement("h2", "Recomendador de livros para ler");
+8
+  createSpan("Qual sua idade?");
+9
+  campoIdade = createInput("100");
+10
+  campoFantasia = createCheckbox("Gosta de Fantasia?");
+11
+  campoAventura = createCheckbox("Gosta de Aventura?");
+}
+13
+​
+14
+function draw() {
+15
+  background("white");
+16
+  let idade = campoIdade.value();
+17
+  let gostaDeFantasia = campoFantasia.checked();
+18
+  let gostaDeAventura = campoAventura.checked();
+19
+  let recomendacao = geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura);
+20
+​
+21
+  fill(color(66, 0, 115));
+22
+  textAlign(CENTER, CENTER);
+23
+  textSize(38);
+24
+  text(recomendacao, width / 2, height / 2);
+25
+}
+26
+​
+27
+function geraRecomendacao(idade, gostaDeFantasia, gostaDeAventura) {
+28
+  if (idade >= 10) {
+29
+    if (idade >= 14) {
+30
+      return "Harry Potter";
+31
+    } else {
+32
+      if (idade >= 12) {
+33
+        if(gostaDeFantasia || gostaDeAventura) {
+34
+          return "Castelo Animado";          
+35
+        } else{
+36
+         return "Percy Jackson";
+37
+        }
+38
+      } else {
+39
+        if (gostaDeFantasia) {
+40
+          return "O Pequeno Principe";
+41
+        } else {
+42
+          return "Your Name";
+43
+        }
+44
+      }
+There are no lint messages
+Current line
+
+Console
+Clear
+
+​
+Preview
